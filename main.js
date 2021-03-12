@@ -1,12 +1,11 @@
-var prevBtn = $('.prev').children('i'),
-    nextBtn = $('.next').children('i'),
+var bullet = $('.fas.fa-circle'),
     elemFirst = $('.first'),
-    elemLast = $('.last');
+    elemLast = $('.last'),
+    nextBtn = $('.next').children('i'),
+    prevBtn = $('.prev').children('i');
 
-// Onclick btn.prev l' immagine con .active perde la classe .active e la precedente ottiene la classe .active
-prevBtn.click(
-  function () {
-
+function prevImg () {
+  return function () {
     var elemActive = $('.active');
 
     elemActive.toggleClass('active');
@@ -16,12 +15,11 @@ prevBtn.click(
     } else {
       elemActive.prev().toggleClass('active');
     }
+  }
+}
 
-  });
-// Onclick btn.next l' immagine con .active perde la classe .active e la seguente ottiene la classe .active
-nextBtn.click(
-  function () {
-
+function nextImg () {
+  return function () {
     var elemActive = $('.active');
 
     elemActive.toggleClass('active');
@@ -31,5 +29,26 @@ nextBtn.click(
     } else {
       elemActive.next().toggleClass('active');
     }
+  }
+}
 
-  });
+// $("#37").key press
+
+// Onclick btn.prev l' immagine con .active perde la classe .active e la precedente ottiene la classe .active
+prevBtn.click( prevImg() );
+
+// Onclick btn.next l' immagine con .active perde la classe .active e la seguente ottiene la classe .active
+nextBtn.click( nextImg() );
+
+// for (var i = 0; i < bullet.length; i++) {
+//   bullet[i].click(
+//     function () {
+//       $(this).addClass('active');
+//     // for (var i = 0; i < bullet.length; i++) {
+//     //   if ( this == bullet[i] ) {
+//     //     $('.images > img'[i]).toggleClass('active');
+//     //   }
+//     // }
+//     }
+//   );
+// }
