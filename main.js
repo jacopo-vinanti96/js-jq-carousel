@@ -55,24 +55,20 @@ nextBtn.click( function () {
 }
 );
 
-// Ciclo per assegnare la proprietà click ai bullet
-for (var j = 0; j < bullet.length; j++) {
-
-  $(bullet[j]).on( "click",
-    function () {
+$(bullet).click(
+  function () {
 // Dichiarazione variabili locali (si utilizzano soltanto qui)
-      var elemActive = $('.active'),
-          img = $('.images img');
+    var elemActive = $('.active'),
+        img = $('.images img');
 // Rimuove la classe active dagli elementi
-      elemActive.toggleClass('active');
+    elemActive.toggleClass('active');
 // Seleziona l' elemento cliccato (n° bullet) e lo rende active
-      $(this).toggleClass('active');
+    $(this).toggleClass('active');
 // Controlla la posizione del bullet active e assegna active all' immagine nella stessa posizione
-      for (var i = 0; i < bullet.length; i++) {
-        if ( $(bullet[i]).hasClass('active') ) {
-          $(img[i]).toggleClass('active');
-        }
+    for (var i = 0; i < bullet.length; i++) {
+      if ( $(bullet[i]).hasClass('active') ) {
+        $(img[i]).toggleClass('active');
       }
     }
-  );
-}
+  }
+);
