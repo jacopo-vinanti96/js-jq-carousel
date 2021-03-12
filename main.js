@@ -9,19 +9,27 @@ prevBtn.click(
 
     var elemActive = $('.active');
 
-    if ( elemActive.hasClass('.first') == true ) {
+    elemActive.toggleClass('active');
 
+    if ( elemActive.hasClass('first') == true ) {
+      elemLast.toggleClass('active');
     } else {
-      elemActive.toggleClass('active');
       elemActive.prev().toggleClass('active');
     }
+
   });
 // Onclick btn.next l' immagine con .active perde la classe .active e la seguente ottiene la classe .active
 nextBtn.click(
   function () {
 
-    var elemActive = $('.active')
+    var elemActive = $('.active');
 
     elemActive.toggleClass('active');
-    elemActive.next().toggleClass('active');
+
+    if ( elemActive.hasClass('last') == true ) {
+      elemFirst.toggleClass('active');
+    } else {
+      elemActive.next().toggleClass('active');
+    }
+
   });
