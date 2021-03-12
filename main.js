@@ -6,7 +6,7 @@ var bullet = $('.fas.fa-circle'),
     prevBtn = $('.prev').children('i');
 
 // Onclick btn.prev l' immagine con .active perde la classe .active e la precedente ottiene la classe .active
-function prevImg () {
+function prevElem () {
   // Variabile dichiarata localmente per riassegnarla all' elemento precedente
   var elemActive = $('.active');
   // Rende non visibile l' immagine
@@ -20,7 +20,7 @@ function prevImg () {
 }
 
 // Onclick btn.next l' immagine con .active perde la classe .active e la seguente ottiene la classe .active
-function nextImg () {
+function nextElem () {
   // Variabile dichiarata localmente per riassegnarla all' elemento seguente
   var elemActive = $('.active');
   // Rende non visibile l' immagine
@@ -37,21 +37,21 @@ function nextImg () {
 $(document).keydown(
   function(e){
     if (e.keyCode == 37) {
-      prevImg();
+      prevElem();
     } else if (e.keyCode == 39) {
-      nextImg();
+      nextElem();
     }
   }
 );
 
 // Onclick si richiamano le funzioni
 prevBtn.click( function () {
-  prevImg();
+  prevElem();
 }
 );
 
 nextBtn.click( function () {
-  nextImg();
+  nextElem();
 }
 );
 
