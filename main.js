@@ -32,7 +32,14 @@ function nextImg () {
   }
 }
 
-// $("#37").key press
+$(document).keydown(
+  function(e){
+    if (e.keyCode == 37) {
+      prevImg();
+    } else if (e.keyCode == 39) {
+      nextImg();
+    }
+});
 
 // Onclick btn.prev l' immagine con .active perde la classe .active e la precedente ottiene la classe .active
 prevBtn.click( prevImg() );
